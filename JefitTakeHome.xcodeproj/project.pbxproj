@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A2DA6F823E5E7C000C8144D /* PhotosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2DA6F723E5E7C000C8144D /* PhotosVC.swift */; };
+		0A2DA6FA23E5F2FB00C8144D /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2DA6F923E5F2FB00C8144D /* UIHelper.swift */; };
+		0A2DA6FC23E5F58300C8144D /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2DA6FB23E5F58300C8144D /* PhotoCell.swift */; };
+		0A2DA6FF23E61B0F00C8144D /* JFAlertVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2DA6FE23E61B0F00C8144D /* JFAlertVCViewController.swift */; };
+		0A41074C23E4B8490031FC88 /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A41074B23E4B8490031FC88 /* CityCell.swift */; };
+		0A41074F23E4BA710031FC88 /* VenuesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A41074E23E4BA710031FC88 /* VenuesVC.swift */; };
+		0AC8E3CE23E150FB00EC3C54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC8E3CD23E150FB00EC3C54 /* AppDelegate.swift */; };
+		0AC8E3D023E150FB00EC3C54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC8E3CF23E150FB00EC3C54 /* SceneDelegate.swift */; };
+		0AC8E3D223E150FB00EC3C54 /* CitiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC8E3D123E150FB00EC3C54 /* CitiesVC.swift */; };
+		0AC8E3D723E150FF00EC3C54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AC8E3D623E150FF00EC3C54 /* Assets.xcassets */; };
+		0AC8E3DA23E150FF00EC3C54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AC8E3D823E150FF00EC3C54 /* LaunchScreen.storyboard */; };
+		0AC8E3E323E15BA500EC3C54 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC8E3E223E15BA500EC3C54 /* NetworkManager.swift */; };
+		0AC8E3E623E15CD700EC3C54 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC8E3E523E15CD700EC3C54 /* City.swift */; };
+		0AC8E3E823E15D4E00EC3C54 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC8E3E723E15D4E00EC3C54 /* Venue.swift */; };
+		0AF8E62623E4C0B300CE0027 /* VenueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF8E62523E4C0B300CE0027 /* VenueCell.swift */; };
+		0AF8E62923E4DCF800CE0027 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF8E62823E4DCF800CE0027 /* Constants.swift */; };
+		0AF8E62B23E4EC3700CE0027 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF8E62A23E4EC3700CE0027 /* Photo.swift */; };
+		0AF8E62D23E53FC900CE0027 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF8E62C23E53FC900CE0027 /* PersistenceManager.swift */; };
+		0AF8E62F23E5433E00CE0027 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF8E62E23E5433E00CE0027 /* ErrorMessage.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0A2DA6F723E5E7C000C8144D /* PhotosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosVC.swift; sourceTree = "<group>"; };
+		0A2DA6F923E5F2FB00C8144D /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		0A2DA6FB23E5F58300C8144D /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		0A2DA6FE23E61B0F00C8144D /* JFAlertVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFAlertVCViewController.swift; sourceTree = "<group>"; };
+		0A41074B23E4B8490031FC88 /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
+		0A41074E23E4BA710031FC88 /* VenuesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesVC.swift; sourceTree = "<group>"; };
+		0AC8E3CA23E150FB00EC3C54 /* JefitTakeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JefitTakeHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AC8E3CD23E150FB00EC3C54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0AC8E3CF23E150FB00EC3C54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		0AC8E3D123E150FB00EC3C54 /* CitiesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesVC.swift; sourceTree = "<group>"; };
+		0AC8E3D623E150FF00EC3C54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0AC8E3D923E150FF00EC3C54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0AC8E3DB23E150FF00EC3C54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AC8E3E223E15BA500EC3C54 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		0AC8E3E523E15CD700EC3C54 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		0AC8E3E723E15D4E00EC3C54 /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		0AF8E62523E4C0B300CE0027 /* VenueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueCell.swift; sourceTree = "<group>"; };
+		0AF8E62823E4DCF800CE0027 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0AF8E62A23E4EC3700CE0027 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		0AF8E62C23E53FC900CE0027 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		0AF8E62E23E5433E00CE0027 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0AC8E3C723E150FB00EC3C54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A2DA6FD23E61AEC00C8144D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0A2DA6FE23E61B0F00C8144D /* JFAlertVCViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0A41074923E4B8210031FC88 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				0A2DA6FD23E61AEC00C8144D /* ViewControllers */,
+				0A41074A23E4B82E0031FC88 /* Cells */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		0A41074A23E4B82E0031FC88 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0A41074B23E4B8490031FC88 /* CityCell.swift */,
+				0AF8E62523E4C0B300CE0027 /* VenueCell.swift */,
+				0A2DA6FB23E5F58300C8144D /* PhotoCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		0A41074D23E4B9080031FC88 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				0AC8E3D123E150FB00EC3C54 /* CitiesVC.swift */,
+				0A41074E23E4BA710031FC88 /* VenuesVC.swift */,
+				0A2DA6F723E5E7C000C8144D /* PhotosVC.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		0AC8E3C123E150FB00EC3C54 = {
+			isa = PBXGroup;
+			children = (
+				0AC8E3CC23E150FB00EC3C54 /* JefitTakeHome */,
+				0AC8E3CB23E150FB00EC3C54 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0AC8E3CB23E150FB00EC3C54 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0AC8E3CA23E150FB00EC3C54 /* JefitTakeHome.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0AC8E3CC23E150FB00EC3C54 /* JefitTakeHome */ = {
+			isa = PBXGroup;
+			children = (
+				0AF8E62723E4DCEB00CE0027 /* Utilities */,
+				0A41074D23E4B9080031FC88 /* Screens */,
+				0A41074923E4B8210031FC88 /* Custom Views */,
+				0AC8E3E423E15CCA00EC3C54 /* Model */,
+				0AC8E3E123E15B9100EC3C54 /* Managers */,
+				0AC8E3CD23E150FB00EC3C54 /* AppDelegate.swift */,
+				0AC8E3CF23E150FB00EC3C54 /* SceneDelegate.swift */,
+				0AC8E3D623E150FF00EC3C54 /* Assets.xcassets */,
+				0AC8E3D823E150FF00EC3C54 /* LaunchScreen.storyboard */,
+				0AC8E3DB23E150FF00EC3C54 /* Info.plist */,
+			);
+			path = JefitTakeHome;
+			sourceTree = "<group>";
+		};
+		0AC8E3E123E15B9100EC3C54 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				0AC8E3E223E15BA500EC3C54 /* NetworkManager.swift */,
+				0AF8E62C23E53FC900CE0027 /* PersistenceManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		0AC8E3E423E15CCA00EC3C54 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0AC8E3E523E15CD700EC3C54 /* City.swift */,
+				0AC8E3E723E15D4E00EC3C54 /* Venue.swift */,
+				0AF8E62A23E4EC3700CE0027 /* Photo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0AF8E62723E4DCEB00CE0027 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				0AF8E62823E4DCF800CE0027 /* Constants.swift */,
+				0AF8E62E23E5433E00CE0027 /* ErrorMessage.swift */,
+				0A2DA6F923E5F2FB00C8144D /* UIHelper.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0AC8E3C923E150FB00EC3C54 /* JefitTakeHome */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0AC8E3DE23E150FF00EC3C54 /* Build configuration list for PBXNativeTarget "JefitTakeHome" */;
+			buildPhases = (
+				0AC8E3C623E150FB00EC3C54 /* Sources */,
+				0AC8E3C723E150FB00EC3C54 /* Frameworks */,
+				0AC8E3C823E150FB00EC3C54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JefitTakeHome;
+			productName = JefitTakeHome;
+			productReference = 0AC8E3CA23E150FB00EC3C54 /* JefitTakeHome.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0AC8E3C223E150FB00EC3C54 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Gabriel Del VIllar De Santiago";
+				TargetAttributes = {
+					0AC8E3C923E150FB00EC3C54 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 0AC8E3C523E150FB00EC3C54 /* Build configuration list for PBXProject "JefitTakeHome" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0AC8E3C123E150FB00EC3C54;
+			productRefGroup = 0AC8E3CB23E150FB00EC3C54 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0AC8E3C923E150FB00EC3C54 /* JefitTakeHome */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0AC8E3C823E150FB00EC3C54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AC8E3DA23E150FF00EC3C54 /* LaunchScreen.storyboard in Resources */,
+				0AC8E3D723E150FF00EC3C54 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0AC8E3C623E150FB00EC3C54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A41074F23E4BA710031FC88 /* VenuesVC.swift in Sources */,
+				0AC8E3E323E15BA500EC3C54 /* NetworkManager.swift in Sources */,
+				0AC8E3E823E15D4E00EC3C54 /* Venue.swift in Sources */,
+				0AF8E62D23E53FC900CE0027 /* PersistenceManager.swift in Sources */,
+				0A2DA6FC23E5F58300C8144D /* PhotoCell.swift in Sources */,
+				0AF8E62623E4C0B300CE0027 /* VenueCell.swift in Sources */,
+				0AC8E3E623E15CD700EC3C54 /* City.swift in Sources */,
+				0A2DA6FF23E61B0F00C8144D /* JFAlertVCViewController.swift in Sources */,
+				0AF8E62F23E5433E00CE0027 /* ErrorMessage.swift in Sources */,
+				0AF8E62923E4DCF800CE0027 /* Constants.swift in Sources */,
+				0A2DA6FA23E5F2FB00C8144D /* UIHelper.swift in Sources */,
+				0AC8E3D223E150FB00EC3C54 /* CitiesVC.swift in Sources */,
+				0A2DA6F823E5E7C000C8144D /* PhotosVC.swift in Sources */,
+				0AF8E62B23E4EC3700CE0027 /* Photo.swift in Sources */,
+				0AC8E3CE23E150FB00EC3C54 /* AppDelegate.swift in Sources */,
+				0A41074C23E4B8490031FC88 /* CityCell.swift in Sources */,
+				0AC8E3D023E150FB00EC3C54 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0AC8E3D823E150FF00EC3C54 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0AC8E3D923E150FF00EC3C54 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0AC8E3DC23E150FF00EC3C54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0AC8E3DD23E150FF00EC3C54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0AC8E3DF23E150FF00EC3C54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4FKLLT47U3;
+				INFOPLIST_FILE = JefitTakeHome/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gabrieldelvillardesantiago.JefitTakeHome;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0AC8E3E023E150FF00EC3C54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4FKLLT47U3;
+				INFOPLIST_FILE = JefitTakeHome/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gabrieldelvillardesantiago.JefitTakeHome;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0AC8E3C523E150FB00EC3C54 /* Build configuration list for PBXProject "JefitTakeHome" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AC8E3DC23E150FF00EC3C54 /* Debug */,
+				0AC8E3DD23E150FF00EC3C54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0AC8E3DE23E150FF00EC3C54 /* Build configuration list for PBXNativeTarget "JefitTakeHome" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AC8E3DF23E150FF00EC3C54 /* Debug */,
+				0AC8E3E023E150FF00EC3C54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0AC8E3C223E150FB00EC3C54 /* Project object */;
+}
