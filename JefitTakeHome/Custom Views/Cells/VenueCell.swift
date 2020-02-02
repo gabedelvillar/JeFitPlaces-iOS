@@ -10,60 +10,35 @@ import UIKit
 
 class VenueCell: UICollectionViewCell {
     
-    let nameLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Grill'em All"
-        label.numberOfLines = 2
-        label.textAlignment = .left
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .boldSystemFont(ofSize: 20)
-        return label
-    }()
+    let nameLabel = JFTitleLabel(title: "Grill'em All", textAlignment: .left, numberOfLines: 2, fontSize: 20, textColor: .label)
     
-    let locationImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(systemName: SFSymbols.location))
-         imageView.contentMode = .scaleAspectFill
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
+    let locationImageView = JFImageView(image: UIImage(systemName: SFSymbols.location) ?? UIImage())
     
-    let locationLabel: UILabel = {
-        let label = UILabel()
-        label.text = "17 North San Pedro Street"
-        label.numberOfLines = 2
-        label.textAlignment = .left
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+    let locationLabel = JFSecondaryTitleLabel(title: "17 North San Pedro Street", textAlignment: .left, numberOfLines: 2, fontSize: 14)
+    let thumbnailImageView = JFImageView(image: #imageLiteral(resourceName: "losangeles"))
     
-    let thumbnailImageView: UIImageView = {
-        let imageView = UIImageView(image: #imageLiteral(resourceName: "losangeles"))
-        imageView.clipsToBounds = true
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-         imageView.contentMode = .scaleAspectFill
-        return imageView
-    }()
+    let catgoryLabel = JFSecondaryTitleLabel(title: "Mexican Restaurant", textAlignment: .left, numberOfLines: 2, fontSize: 14)
     
-    let catgoryLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Mexican Restaurant"
-        label.numberOfLines = 2
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let bookmarkImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(systemName: SFSymbols.bookmark))
-        imageView.contentMode = .scaleAspectFill
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
+    let bookmarkImageView = JFImageView(image: UIImage(systemName: SFSymbols.bookmark) ?? UIImage())
     
     static let cellReuseID = "VenueCell"
+    
+    // MARK: Initializers
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        setupViews()
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: Fileprivate Methods
+    
+    fileprivate func setupViews() {
         addSubview(thumbnailImageView)
         addSubview(nameLabel)
         addSubview(locationLabel)
@@ -80,23 +55,22 @@ class VenueCell: UICollectionViewCell {
             thumbnailImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             thumbnailImageView.heightAnchor.constraint(equalToConstant: 200),
             
+            
             nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
             nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
             nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             nameLabel.heightAnchor.constraint(equalToConstant: 22),
-          
+            
             
             locationImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
             locationImageView.heightAnchor.constraint(equalToConstant: 15),
             locationImageView.widthAnchor.constraint(equalToConstant: 15),
             
             
-            
             locationLabel.topAnchor.constraint(equalTo: locationImageView.topAnchor),
             locationLabel.leadingAnchor.constraint(equalTo: locationImageView.trailingAnchor, constant: padding),
             locationLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             locationLabel.bottomAnchor.constraint(equalTo: thumbnailImageView.topAnchor, constant: -padding / 2),
-            
             
             
             catgoryLabel.topAnchor.constraint(equalTo: thumbnailImageView.bottomAnchor),
@@ -110,10 +84,5 @@ class VenueCell: UICollectionViewCell {
             bookmarkImageView.heightAnchor.constraint(equalToConstant: 30),
             bookmarkImageView.widthAnchor.constraint(equalToConstant: 30)
         ])
-        
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }

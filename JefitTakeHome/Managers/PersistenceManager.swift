@@ -21,7 +21,7 @@ class PersistenceManager {
     }
     
     
-    static func updateWith(venue: Venue, actionType: PersitenceActionType, completed: @escaping (JFError) -> Void){
+    static func updateWith(venue: Venue, actionType: PersitenceActionType, completed: @escaping (JFError?) -> Void){
         retrieveBookmarked { (result) in
             switch result {
             case .success(let bookmarked):
@@ -29,12 +29,16 @@ class PersistenceManager {
                 
                 switch actionType {
                 case .add:
+                    guard !retreivedBookmarked.contains(venue) else {
+                        completed(.alreadyBookmarked)
+                        return
+                    }
                     retreivedBookmarked.append(venue)
                 case .remove:
                     retreivedBookmarked.removeAll(where: {$0.id == venue.id})
                 }
                 
-                completed(save(bookmarked: retreivedBookmarked) ?? JFError.unableToBookmark)
+                completed(save(bookmarked: retreivedBookmarked))
                 
             case .failure(let error):
                 completed(error)

@@ -22,24 +22,13 @@ class CitiesVC: UIViewController {
     
     var cities: [City] = []
 
+    // MARK: Lifecylce methods
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-        
-        collectionView.backgroundColor = .systemBackground
-        view.addSubview(collectionView)
-        
-        let sanJose = City(name: "San Jose, CA", latitude: 37.3354, longitude: -121.8930, image: #imageLiteral(resourceName: "sanJose"))
-        let losAngeles = City(name: "Los Angeles, CA", latitude: 34.0522, longitude: -118.2436, image: #imageLiteral(resourceName: "hollywood"))
-        let sanDiego = City(name: "San Diego, CA", latitude: 32.7157, longitude: -117.1610, image: #imageLiteral(resourceName: "sandiego"))
-        let sacramento = City(name: "Sacramento, CA", latitude: 38.5905, longitude: -121.4899, image: #imageLiteral(resourceName: "sacramento"))
-        let sanFrancisco = City(name: "San Francisco, CA", latitude: 37.7337, longitude: -122.4467, image: #imageLiteral(resourceName: "sanfrancisco"))
-        
-        
-        cities = [sacramento, sanFrancisco, sanJose, losAngeles, sanDiego]
-        
-        
-        
+        setupViews()
+        setupCities()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,9 +36,33 @@ class CitiesVC: UIViewController {
         
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
+    
+    // MARK: Fileprivate methods
+    
+    fileprivate func setupViews() {
+           view.backgroundColor = .systemBackground
+           collectionView.backgroundColor = .systemBackground
+           view.addSubview(collectionView)
+       }
+       
+    
+    
+    fileprivate func setupCities() {
+           let sanJose = City(name: "San Jose, CA", latitude: 37.3354, longitude: -121.8930, image: #imageLiteral(resourceName: "sanJose"))
+           let losAngeles = City(name: "Los Angeles, CA", latitude: 34.0522, longitude: -118.2436, image: #imageLiteral(resourceName: "hollywood"))
+           let sanDiego = City(name: "San Diego, CA", latitude: 32.7157, longitude: -117.1610, image: #imageLiteral(resourceName: "sandiego"))
+           let sacramento = City(name: "Sacramento, CA", latitude: 38.5905, longitude: -121.4899, image: #imageLiteral(resourceName: "sacramento"))
+           let sanFrancisco = City(name: "San Francisco, CA", latitude: 37.7337, longitude: -122.4467, image: #imageLiteral(resourceName: "sanfrancisco"))
+           
+           cities = [sacramento, sanFrancisco, sanJose, losAngeles, sanDiego]
+       }
+       
 
 
 }
+
+
+    // MARK: CollectionView methods
 
 extension CitiesVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

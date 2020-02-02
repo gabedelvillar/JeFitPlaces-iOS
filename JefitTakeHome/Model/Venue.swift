@@ -16,12 +16,16 @@ struct Response: Codable {
     var venues: [Venue]?
 }
 
-struct Venue: Codable {
+struct Venue: Codable, Equatable {
     let id: String
     let name: String
     let location: Location
     var categories: [Categories]?
+    var hasBookmarked: Bool?
     
+    static func == (lhs: Venue, rhs: Venue) -> Bool {
+        lhs.id == rhs.id
+    }
 }
 
 struct Location: Codable{

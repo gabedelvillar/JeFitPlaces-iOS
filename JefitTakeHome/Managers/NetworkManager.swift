@@ -27,12 +27,11 @@ class NetworkManager {
     }
     
     func getVenues(for city: City, completed: @escaping (Result<SearchResult, JFError>) -> Void) {
-       //let endpoint = baseURL + "explore?ll=\(city.latitude),\(city.longitude)&client_id=\(clientId)&client_secret=\(clientSecret)&v=\(version)"
         let endpoint = baseURL + "search?&client_id=\(clientId)&client_secret=\(clientSecret)&v=\(version)&ll=\(city.latitude),\(city.longitude)&limit=3"
         print(endpoint)
         
         guard let url = URL(string: endpoint) else {
-            #warning("show user error")
+            completed(.failure(.invalidVenueRequest))
             return
         }
         
@@ -50,11 +49,9 @@ class NetworkManager {
             }
             
             guard let data = data else {
-                completed(.failure(.invalidResponse))
+                completed(.failure(.invalidData))
                 return
             }
-            
-            //print(String(data: data, encoding: .utf8))
             
             do{
                 let decoder = JSONDecoder()
@@ -62,7 +59,7 @@ class NetworkManager {
                 completed(.success(venues))
             } catch {
                 print(error)
-                completed(.failure(.invalidResponse))
+                completed(.failure(.invalidData))
             }
         }
         
@@ -75,7 +72,7 @@ class NetworkManager {
         print(endpoint)
                
                guard let url = URL(string: endpoint) else {
-                   #warning("show user error")
+                completed(.failure(.invalidPhotoRequest))
                    return
                }
                
@@ -98,15 +95,13 @@ class NetworkManager {
                        return
                    }
                    
-                   //print(String(data: data, encoding: .utf8))
-                   
                    do{
                        let decoder = JSONDecoder()
                        let photos = try decoder.decode(PhotoSearchResult.self, from: data)
                        completed(.success(photos))
                    } catch {
                        print(error)
-                       completed(.failure(.invalidResponse))
+                       completed(.failure(.invalidData))
                    }
                }
                

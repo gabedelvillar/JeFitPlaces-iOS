@@ -13,4 +13,7 @@ enum JFError: String, Error {
     case invalidResponse = "Invalid response from the server. Please try again."
     case invalidData = "the data received from the server was invlaid. Please try again."
     case unableToBookmark = "There was an error bookmarking this venue. Please try again."
+    case alreadyBookmarked = "You have already bookmarked this venue."
+    case invalidVenueRequest = "The endpoint request to get venues is invalid."
+    case invalidPhotoRequest = "The endpoint request to get photos is invalid"
 }

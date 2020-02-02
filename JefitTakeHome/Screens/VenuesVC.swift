@@ -11,18 +11,21 @@ import UIKit
 class VenuesVC: UIViewController {
     
     var city: City
-    
     var venues: [Venue] = []
+    var bookmarkedVenues: [Venue] = []
     
     lazy var collectionView: UICollectionView = {
-           let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UICollectionViewFlowLayout())
-           collectionView.dataSource = self
-           collectionView.delegate = self
+        let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.backgroundColor = .systemBackground
-           collectionView.register(VenueCell.self, forCellWithReuseIdentifier: VenueCell.cellReuseID)
-           
-           return collectionView
-       }()
+        collectionView.register(VenueCell.self, forCellWithReuseIdentifier: VenueCell.cellReuseID)
+        
+        return collectionView
+    }()
+    
+    
+    // MARK: Initializers
     
     init(city: City){
         self.city = city
@@ -34,9 +37,11 @@ class VenuesVC: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: Lifecylce methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.backgroundColor = .systemPurple
         title = city.name
         view.addSubview(collectionView)
@@ -49,19 +54,31 @@ class VenuesVC: UIViewController {
         
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        PersistenceManager.retrieveBookmarked {[weak self] (result) in
+            
+            guard let self = self else {return}
+            switch result{
+            case .success(let venues):
+                self.bookmarkedVenues = venues
+                self.collectionView.reloadData()
+                print("VENUES: ", venues)
+            case .failure:
+                self.presentJFAlertOnMainThread(title: "Bookmarked Venues", message: "Could not retreive bookmarked venues", buttonTitle: "Ok")
+            }
+        }
     }
     
+    // MARK: Fileprvate methods
+    
     fileprivate func getVenues(){
-        
-       
-        
         NetworkManager.shared.getVenues(for: city) {[weak self] result in
             guard let self = self else { return }
             
             switch result{
             case .success(let searchResult):
                 guard let venues = searchResult.response?.venues else {return}
-               
+                
                 self.venues = venues
                 self.getPhotosOfVenues()
                 self.downloadVenueThumbnail()
@@ -71,92 +88,91 @@ class VenuesVC: UIViewController {
                 }
                 
             case .failure(let error):
+                self.presentJFAlertOnMainThread(title: "Bad Stuff Happened", message: error.rawValue, buttonTitle: "Ok")
                 print("bad Stuff happended: ", error)
             }
         }
-        
-       
-        
-        
-   
-      
     }
     
     
     fileprivate func getPhotosOfVenues(){
         venues.forEach { (venue) in
-                   
-                  
-                   
-                   NetworkManager.shared.getVenuePhotos(for: venue.id) { (result) in
-                       switch result {
-                       case .success(let searchResult):
-                        NetworkManager.shared.venueImagesCache.setObject(searchResult.response?.items as NSArray? ?? [], forKey: venue.id as NSString)
-                       case .failure(let error):
-                           print("bad stuff happenened", error)
-                       }
-                   }
-               }
+            NetworkManager.shared.getVenuePhotos(for: venue.id) { (result) in
+                switch result {
+                case .success(let searchResult):
+                    NetworkManager.shared.venueImagesCache.setObject(searchResult.response?.items as NSArray? ?? [], forKey: venue.id as NSString)
+                case .failure(let error):
+                    print("bad stuff happenened", error)
+                }
+            }
+        }
     }
     
     
     fileprivate func downloadVenueThumbnail(){
         venues.forEach { (venue) in
-               let cacheKey = NSString(string: venue.id)
-               
-               if let image = (NetworkManager.shared.venueImagesCache.object(forKey: cacheKey) as? [Photo])?.first {
-                   
-                   let imageUrl = "\(image.prefix)/300x500/\(image.suffix)"
-                    print(imageUrl)
-                   
-                   
-                   
-                   NetworkManager.shared.downloadImage(from: imageUrl) { (image) in
-                       
-                      
-                       
-                   }
-                   
-                   
-                   
-               }
-               
-               
-           }
+            let cacheKey = NSString(string: venue.id)
+            
+            if let image = (NetworkManager.shared.venueImagesCache.object(forKey: cacheKey) as? [Photo])?.first {
+                let imageUrl = "\(image.prefix)/300x500/\(image.suffix)"
+                NetworkManager.shared.downloadImage(from: imageUrl) { (image) in
+                }
+            }
+        }
     }
-
-
-
+    
 }
+
+    // MARK: CollectionView methods
 
 extension VenuesVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return venues.count
-       }
-       
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VenueCell.cellReuseID, for: indexPath) as! VenueCell
-        let venue = venues[indexPath.item]
+        
+        
+        var venue = venues[indexPath.item]
+        
+        if bookmarkedVenues.contains(venue){
+            if let bookmarkedVenue = bookmarkedVenues.first(where: {$0.id == venue.id}){
+                venue = bookmarkedVenue
+            }
+        }
+        
+        
         cell.nameLabel.text = venue.name
         cell.locationLabel.text = (venue.location.address != nil) ? venue.location.address : "Not Available"
+        let hasBookmarked = venue.hasBookmarked ?? false
+        let imageSystemName = hasBookmarked ? SFSymbols.bookmarkFilled : SFSymbols.bookmark
+        cell.bookmarkImageView.image = UIImage(systemName: imageSystemName)
         
-        let cacheKey = NSString(string: venue.id)
         cell.catgoryLabel.text = venue.categories?.first?.pluralName
         return cell
-       }
-       
-       func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-           return .init(width: view.frame.width, height: 300)
-       }
-       
-       
-       func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-          
-        let venue = venues[indexPath.item]
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return .init(width: view.frame.width, height: 300)
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let photosVC = PhotosVC(venueName: venue.name)
+        var venue = venues[indexPath.item]
+        
+        
+        if bookmarkedVenues.contains(venue){
+            if let bookmarkedVenue = bookmarkedVenues.first(where: {$0.id == venue.id}){
+                venue = bookmarkedVenue
+            }
+        }
+        
+        
+        let photosVC = PhotosVC(venue: venue)
         
         navigationController?.pushViewController(photosVC, animated: true)
-           
-       }
+        
+    }
 }

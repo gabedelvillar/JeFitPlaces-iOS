@@ -8,11 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		0A2DA6F823E5E7C000C8144D /* PhotosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2DA6F723E5E7C000C8144D /* PhotosVC.swift */; };
-		0A2DA6FA23E5F2FB00C8144D /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2DA6F923E5F2FB00C8144D /* UIHelper.swift */; };
 		0A2DA6FC23E5F58300C8144D /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2DA6FB23E5F58300C8144D /* PhotoCell.swift */; };
-		0A2DA6FF23E61B0F00C8144D /* JFAlertVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2DA6FE23E61B0F00C8144D /* JFAlertVCViewController.swift */; };
+		0A2DA6FF23E61B0F00C8144D /* JFAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2DA6FE23E61B0F00C8144D /* JFAlertVC.swift */; };
 		0A41074C23E4B8490031FC88 /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A41074B23E4B8490031FC88 /* CityCell.swift */; };
 		0A41074F23E4BA710031FC88 /* VenuesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A41074E23E4BA710031FC88 /* VenuesVC.swift */; };
+		0A7CE8C523E6432000925383 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7CE8C423E6432000925383 /* UIViewController+Ext.swift */; };
+		0A7CE8C723E69A1C00925383 /* CityCellBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7CE8C623E69A1C00925383 /* CityCellBaseCell.swift */; };
+		0A7CE8CA23E69F3A00925383 /* JFSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7CE8C923E69F3A00925383 /* JFSecondaryTitleLabel.swift */; };
+		0A7CE8CC23E6A1B400925383 /* JFTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7CE8CB23E6A1B400925383 /* JFTitleLabel.swift */; };
+		0A7CE8CF23E6A52600925383 /* JFImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7CE8CE23E6A52600925383 /* JFImageView.swift */; };
+		0A7CE8D123E6A91D00925383 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7CE8D023E6A91D00925383 /* UIHelper.swift */; };
+		0A7CE8D323E6AABE00925383 /* JFBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7CE8D223E6AABE00925383 /* JFBodyLabel.swift */; };
 		0AC8E3CE23E150FB00EC3C54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC8E3CD23E150FB00EC3C54 /* AppDelegate.swift */; };
 		0AC8E3D023E150FB00EC3C54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC8E3CF23E150FB00EC3C54 /* SceneDelegate.swift */; };
 		0AC8E3D223E150FB00EC3C54 /* CitiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC8E3D123E150FB00EC3C54 /* CitiesVC.swift */; };
@@ -30,11 +36,17 @@
 
 /* Begin PBXFileReference section */
 		0A2DA6F723E5E7C000C8144D /* PhotosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosVC.swift; sourceTree = "<group>"; };
-		0A2DA6F923E5F2FB00C8144D /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		0A2DA6FB23E5F58300C8144D /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
-		0A2DA6FE23E61B0F00C8144D /* JFAlertVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFAlertVCViewController.swift; sourceTree = "<group>"; };
+		0A2DA6FE23E61B0F00C8144D /* JFAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFAlertVC.swift; sourceTree = "<group>"; };
 		0A41074B23E4B8490031FC88 /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
 		0A41074E23E4BA710031FC88 /* VenuesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesVC.swift; sourceTree = "<group>"; };
+		0A7CE8C423E6432000925383 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		0A7CE8C623E69A1C00925383 /* CityCellBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCellBaseCell.swift; sourceTree = "<group>"; };
+		0A7CE8C923E69F3A00925383 /* JFSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFSecondaryTitleLabel.swift; sourceTree = "<group>"; };
+		0A7CE8CB23E6A1B400925383 /* JFTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFTitleLabel.swift; sourceTree = "<group>"; };
+		0A7CE8CE23E6A52600925383 /* JFImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFImageView.swift; sourceTree = "<group>"; };
+		0A7CE8D023E6A91D00925383 /* UIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		0A7CE8D223E6AABE00925383 /* JFBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JFBodyLabel.swift; sourceTree = "<group>"; };
 		0AC8E3CA23E150FB00EC3C54 /* JefitTakeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JefitTakeHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AC8E3CD23E150FB00EC3C54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AC8E3CF23E150FB00EC3C54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,7 +78,7 @@
 		0A2DA6FD23E61AEC00C8144D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				0A2DA6FE23E61B0F00C8144D /* JFAlertVCViewController.swift */,
+				0A2DA6FE23E61B0F00C8144D /* JFAlertVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -74,6 +86,8 @@
 		0A41074923E4B8210031FC88 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				0A7CE8CD23E6A50B00925383 /* ImageViews */,
+				0A7CE8C823E69EB000925383 /* Labels */,
 				0A2DA6FD23E61AEC00C8144D /* ViewControllers */,
 				0A41074A23E4B82E0031FC88 /* Cells */,
 			);
@@ -86,6 +100,7 @@
 				0A41074B23E4B8490031FC88 /* CityCell.swift */,
 				0AF8E62523E4C0B300CE0027 /* VenueCell.swift */,
 				0A2DA6FB23E5F58300C8144D /* PhotoCell.swift */,
+				0A7CE8C623E69A1C00925383 /* CityCellBaseCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -98,6 +113,32 @@
 				0A2DA6F723E5E7C000C8144D /* PhotosVC.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		0A7CE8C323E6430500925383 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0A7CE8C423E6432000925383 /* UIViewController+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0A7CE8C823E69EB000925383 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				0A7CE8C923E69F3A00925383 /* JFSecondaryTitleLabel.swift */,
+				0A7CE8CB23E6A1B400925383 /* JFTitleLabel.swift */,
+				0A7CE8D223E6AABE00925383 /* JFBodyLabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
+		0A7CE8CD23E6A50B00925383 /* ImageViews */ = {
+			isa = PBXGroup;
+			children = (
+				0A7CE8CE23E6A52600925383 /* JFImageView.swift */,
+			);
+			path = ImageViews;
 			sourceTree = "<group>";
 		};
 		0AC8E3C123E150FB00EC3C54 = {
@@ -119,6 +160,7 @@
 		0AC8E3CC23E150FB00EC3C54 /* JefitTakeHome */ = {
 			isa = PBXGroup;
 			children = (
+				0A7CE8C323E6430500925383 /* Extensions */,
 				0AF8E62723E4DCEB00CE0027 /* Utilities */,
 				0A41074D23E4B9080031FC88 /* Screens */,
 				0A41074923E4B8210031FC88 /* Custom Views */,
@@ -157,7 +199,7 @@
 			children = (
 				0AF8E62823E4DCF800CE0027 /* Constants.swift */,
 				0AF8E62E23E5433E00CE0027 /* ErrorMessage.swift */,
-				0A2DA6F923E5F2FB00C8144D /* UIHelper.swift */,
+				0A7CE8D023E6A91D00925383 /* UIHelper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -235,18 +277,24 @@
 				0A41074F23E4BA710031FC88 /* VenuesVC.swift in Sources */,
 				0AC8E3E323E15BA500EC3C54 /* NetworkManager.swift in Sources */,
 				0AC8E3E823E15D4E00EC3C54 /* Venue.swift in Sources */,
+				0A7CE8D123E6A91D00925383 /* UIHelper.swift in Sources */,
+				0A7CE8CC23E6A1B400925383 /* JFTitleLabel.swift in Sources */,
 				0AF8E62D23E53FC900CE0027 /* PersistenceManager.swift in Sources */,
 				0A2DA6FC23E5F58300C8144D /* PhotoCell.swift in Sources */,
 				0AF8E62623E4C0B300CE0027 /* VenueCell.swift in Sources */,
 				0AC8E3E623E15CD700EC3C54 /* City.swift in Sources */,
-				0A2DA6FF23E61B0F00C8144D /* JFAlertVCViewController.swift in Sources */,
+				0A2DA6FF23E61B0F00C8144D /* JFAlertVC.swift in Sources */,
+				0A7CE8C523E6432000925383 /* UIViewController+Ext.swift in Sources */,
 				0AF8E62F23E5433E00CE0027 /* ErrorMessage.swift in Sources */,
 				0AF8E62923E4DCF800CE0027 /* Constants.swift in Sources */,
-				0A2DA6FA23E5F2FB00C8144D /* UIHelper.swift in Sources */,
+				0A7CE8CA23E69F3A00925383 /* JFSecondaryTitleLabel.swift in Sources */,
+				0A7CE8CF23E6A52600925383 /* JFImageView.swift in Sources */,
 				0AC8E3D223E150FB00EC3C54 /* CitiesVC.swift in Sources */,
 				0A2DA6F823E5E7C000C8144D /* PhotosVC.swift in Sources */,
+				0A7CE8D323E6AABE00925383 /* JFBodyLabel.swift in Sources */,
 				0AF8E62B23E4EC3700CE0027 /* Photo.swift in Sources */,
 				0AC8E3CE23E150FB00EC3C54 /* AppDelegate.swift in Sources */,
+				0A7CE8C723E69A1C00925383 /* CityCellBaseCell.swift in Sources */,
 				0A41074C23E4B8490031FC88 /* CityCell.swift in Sources */,
 				0AC8E3D023E150FB00EC3C54 /* SceneDelegate.swift in Sources */,
 			);

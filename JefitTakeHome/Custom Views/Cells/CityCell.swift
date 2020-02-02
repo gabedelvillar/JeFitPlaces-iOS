@@ -9,68 +9,41 @@
 import UIKit
 
 
-class CityCell: UICollectionViewCell {
+class CityCell: CityCellBaseCell {
     
     static let cellReuseID = "CityCell"
     
-    let titleLabel: UILabel = {
-       
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Los Angeles, CA"
-        return label
-    }()
+    let titleLabel = JFTitleLabel(title: "Los Angeles, CA", textAlignment: .left, numberOfLines: 1, fontSize: 32, textColor: .white)
     
-    let backgrounImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleToFill
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.clipsToBounds = true
-        imageView.image = #imageLiteral(resourceName: "losangeles")
-        return imageView
-    }()
+    let backgrounImageView = JFImageView(image: #imageLiteral(resourceName: "losangeles"))
+    
+    // MARK: Initiazlizers
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = .systemBackground
-        
-        self.backgroundView = UIView()
-        self.backgroundView?.translatesAutoresizingMaskIntoConstraints = false
-        
-        addSubview(self.backgroundView!)
-        
-        
-        NSLayoutConstraint.activate([
-            (self.backgroundView?.leadingAnchor.constraint(equalTo: contentView.leadingAnchor))!,
-            (self.backgroundView?.trailingAnchor.constraint(equalTo: contentView.trailingAnchor))!,
-            (self.backgroundView?.topAnchor.constraint(equalTo: contentView.topAnchor))!,
-            (self.backgroundView?.bottomAnchor.constraint(equalTo: contentView.bottomAnchor))!
-        ])
-       
-        self.backgroundView?.backgroundColor = .systemBackground
-        self.backgroundView?.layer.cornerRadius = 16
-        
-        self.backgroundView?.layer.shadowOpacity = 0.1
-        self.backgroundView?.layer.shadowRadius = 10
-        self.backgroundView?.layer.shadowOffset = .init(width: 0, height: 10)
-        self.backgroundView?.layer.shouldRasterize = true
-        
+        setupViews()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: Fileprivate methods
+    
+    fileprivate func setupViews() {
         backgroundColor = .systemBackground
         layer.cornerRadius = 16
+        clipsToBounds = true
+        
+        backgrounImageView.clipsToBounds = true
         
         addSubview(backgrounImageView)
-        
         addSubview(titleLabel)
-        titleLabel.textColor = .systemBackground
-        titleLabel.font = .systemFont(ofSize: 32, weight: .bold)
-        
-        clipsToBounds = true
         
         let padding: CGFloat = 20
         
         NSLayoutConstraint.activate([
-            
             backgrounImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             backgrounImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             backgrounImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
@@ -83,8 +56,7 @@ class CityCell: UICollectionViewCell {
         ])
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    
+    
     
 }
